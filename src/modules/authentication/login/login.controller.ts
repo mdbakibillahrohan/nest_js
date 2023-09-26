@@ -6,6 +6,6 @@ export class LoginController {
   constructor(private LoginService: LoginService) {}
   @Post('/')
   async login() {
-    return this.LoginService.getAll();
+    return '';
   }
 }

@@ -1,9 +1,9 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
-export class Photo {
-  @PrimaryGeneratedColumn()
-  id: number;
+@Entity({ name: 'users' })
+export class Users {
+  @PrimaryGeneratedColumn('uuid')
+  user_id: string;
 
   @Column({ length: 500 })
   name: string;
@@ -12,11 +12,8 @@ export class Photo {
   description: string;
 
   @Column()
-  filename: string;
+  designation_id: string;
 
-  @Column('int')
-  views: number;
-
-  @Column()
-  isPublished: boolean;
+  @Column('datetime')
+  created_at: Date;
 }
